@@ -1,0 +1,84 @@
+// src/sass/main.scss
+@import '~vuetify/src/styles/styles.sass';
+
+$body-font-family: "Ubuntu", sans-serif;
+
+v-application {
+    .text-h1,
+    .text-h2,
+    .text-h3,
+    .text-h4,
+    .text-h5,
+    .text-h6,
+    .text-headline,
+    .text-title,
+    .text-subtitle-1,
+    .text-subtitle-2,
+    .text-body-1,
+    .text-body-2,
+    .text-button,
+    .text-caption,
+    .text-overline {
+        font-family: $body-font-family !important;
+    }
+}
+
+//  v-text-field override
+.v-text-field.v-text-field--enclosed:not(.v-text-field--rounded) > .v-input__control > .v-input__slot,
+.v-text-field.v-text-field--enclosed .v-text-field__details {
+  padding: 0;
+}
+
+.v-input__slot {
+  min-height: 40px;
+}
+
+.v-text-field--outlined > .v-input__control > .v-input__slot {
+  min-height: 40px;
+  max-height: 40px;
+  height: 40px;
+}
+
+.v-text-field--outlined > .v-input__control > .v-input__slot > input {
+  padding: 0 10px;
+}
+
+.v-text-field .v-label--active ,
+.v-text-field-outlined .v-label--active {
+  transform: none;
+}
+
+.v-text-field .v-label ,
+.v-text-field-outlined .v-label {
+  top: -30px;
+  left: 0;
+  font-size: 14px;
+  color: #56586D;
+}
+
+.v-text-field--outlined legend {
+    display: none;
+}
+
+.v-text-field--is-booted > .v-input__control > .v-input__slot {
+  min-height: 40px;
+  max-height: 40px;
+  height: 40px;
+}
+
+.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+  border: none;
+}
+
+
+// Autocomplete override
+.v-text-field.v-autocomplete {
+  background: #fff;
+  
+}
+
+
+// Navigation drawer override
+// .v-application--is-ltr .v-list-item__icon:first-child {
+//   margin-right: 12px;
+// }
