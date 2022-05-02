@@ -3,7 +3,7 @@
         <EmptyState 
             v-if="!transactions.length"
             resource="transaction"
-            imgUrl="../assets/vector/empty-transaction.svg"
+            imgUrl="empty-transaction"
         >
             <p>Transactions will appear here</p>
         </EmptyState>

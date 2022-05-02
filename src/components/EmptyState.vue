@@ -10,7 +10,7 @@
                     contain
                     height="200"
                 /> -->
-                <img :src="require(`${imgUrl}`)"  />
+                <img :src="require('../assets/vector/' + imgUrl + '.svg')"  />
             </div>
             <p class="empty-text">You do not have any {{ resource | pluralize }} yet</p>
             <slot />
