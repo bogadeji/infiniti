@@ -10,7 +10,7 @@
                     type="password"
                     label="Password"
                 />
-                <AppBtn width="100%" x-large light >Sign in</AppBtn>
+                <AppBtn width="100%" x-large light to="/dashboard" >Sign in</AppBtn>
             
 
             <p><a>Forgot password</a></p>
