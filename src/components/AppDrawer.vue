@@ -119,7 +119,7 @@
           },
           {
             title: 'Commissions',
-            icon: 'mdi-cash-usd-outline',
+            icon: 'mdi-cash-multiple',
             to: '/commissions',
           },
           {
