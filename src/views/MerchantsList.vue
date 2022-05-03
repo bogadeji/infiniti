@@ -1,9 +1,12 @@
 <template>
     <v-container>
         <EmptyState 
-            v-if="!agents.length"
+            v-if="!merchants.length"
             resource="merchants"
+            imgUrl="empty-merchant"
+            message="You do not have any merchants yet"
             btn
+            btnMsg="Create new merchant"
         />
         <div v-else>
             <v-data-table
@@ -29,7 +32,8 @@ export default {
                 { text: 'added by', value: 'added_by' },
                 { text: 'action', },
             ],
-            merchants: [
+            merchants: [],
+            merchant: [
                 {
                     merchant_name: "Admiralty Branch",
                     no_of_terminals: "23",

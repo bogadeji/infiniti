@@ -7,14 +7,14 @@ import AuthOTP from '@/views/AuthOTP';
 import Dashboard from '@/views/Dashboard';
 import UserList from '@/views/UserList.vue'
 import TransactionsList from '@/views/TransactionsList.vue'
-// import BranchList from '@/views/BranchList.vue'
-// import MerchantsList from '@/views/MerchantsList.vue'
-// import AgentsList from '@/views/AgentsList'
-// import CommissionsList from '@/views/CommissionsList.vue'
-// import TerminalsList from '@/views/TerminalsList.vue'
-// import ProductList from '@/views/ProductList.vue'
-// import ApiList from '@/views/ApiList'
-// import SystemSettings from '@/views/SystemSettings'
+import BranchList from '@/views/BranchList.vue'
+import MerchantsList from '@/views/MerchantsList.vue'
+import AgentsList from '@/views/AgentsList'
+import CommissionsList from '@/views/CommissionsList.vue'
+import TerminalsList from '@/views/TerminalsList.vue'
+import ProductList from '@/views/ProductList.vue'
+import ApiList from '@/views/ApiList'
+import SystemSettings from '@/views/SystemSettings'
 
 Vue.use(Router);
 
@@ -83,78 +83,78 @@ export default new Router({
                 name: 'Users'
             }
         },
-        // {
-        //     path: '/branch',
-        //     name: 'BranchList',
-        //     component: BranchList,
-        //     meta: {
-        //         layout: 'LoggedInLayout', 
-        //         name: 'Branches'
-        //     }
-        // },
-        // {
-        //     path: '/merchants',
-        //     name: 'Merchants',
-        //     component: MerchantsList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Merchants'
-        //     }
-        // },
-        // {
-        //     path: '/agents',
-        //     name: 'AgentsList',
-        //     component: AgentsList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Agents'
-        //     }
-        // },
-        // {
-        //     path: '/commissions',
-        //     name: 'CommissionList',
-        //     component: CommissionsList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Commissions'
-        //     }
-        // },
-        // {
-        //     path: '/terminals',
-        //     name: 'TerminalsList',
-        //     component: TerminalsList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Terminals'
-        //     }
-        // },
-        // {
-        //     path: '/products',
-        //     name: 'ProductList',
-        //     component: ProductList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Products'
-        //     }
-        // },
-        // {
-        //     path: '/api',
-        //     name: 'ApiList',
-        //     component: ApiList,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'API'
-        //     }
-        // },
-        // {
-        //     path: '/system-settings',
-        //     name: 'SystemSettings',
-        //     component: SystemSettings,
-        //     meta: {
-        //         layout: 'LoggedInLayout',
-        //         name: 'Settings'
-        //     }
-        // },
+        {
+            path: '/branch',
+            name: 'BranchList',
+            component: BranchList,
+            meta: {
+                layout: 'LoggedInLayout', 
+                name: 'Branches'
+            }
+        },
+        {
+            path: '/merchants',
+            name: 'Merchants',
+            component: MerchantsList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Merchants'
+            }
+        },
+        {
+            path: '/agents',
+            name: 'AgentsList',
+            component: AgentsList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Agents'
+            }
+        },
+        {
+            path: '/commissions',
+            name: 'CommissionList',
+            component: CommissionsList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Commissions'
+            }
+        },
+        {
+            path: '/terminals',
+            name: 'TerminalsList',
+            component: TerminalsList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Terminals'
+            }
+        },
+        {
+            path: '/products',
+            name: 'ProductList',
+            component: ProductList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Products'
+            }
+        },
+        {
+            path: '/api',
+            name: 'ApiList',
+            component: ApiList,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'API'
+            }
+        },
+        {
+            path: '/system-settings',
+            name: 'SystemSettings',
+            component: SystemSettings,
+            meta: {
+                layout: 'LoggedInLayout',
+                name: 'Settings'
+            }
+        },
         {
             path: '/:pathMath(.*)',
             name: 'NotFound',

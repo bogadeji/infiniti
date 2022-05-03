@@ -3,7 +3,10 @@
         <EmptyState 
             v-if="!terminals.length"
             resource="terminals"
+            imgUrl="empty-terminal"
+            message="You do not have any terminals yet"
             btn
+            btnMsg="Create new terminal"
         />
         <div v-else>
             <v-data-table

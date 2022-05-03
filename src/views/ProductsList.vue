@@ -3,7 +3,9 @@
         <EmptyState 
             v-if="!products.length"
             resource="products"
+            message="You do not have any products yet"
             btn
+            btnMsg="Add a new product"
         />
         <div v-else>
             <v-data-table

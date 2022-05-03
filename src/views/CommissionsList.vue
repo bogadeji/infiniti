@@ -3,8 +3,10 @@
         <EmptyState 
             v-if="!commissions.length"
             resource="commissions"
-            btn
-        />
+            message="You have not earned any commissions yet"
+        >
+            <p>Commissions will appear here</p>
+        </EmptyState>
         <div v-else>
             <v-data-table
                 :headers="headers"
@@ -30,7 +32,7 @@ export default {
                 { text: 'action', },
             ],
             commissions: [],
-            agents: [
+            commission: [
                 {
                     product: "MTN voucher",
                     commission: "15",

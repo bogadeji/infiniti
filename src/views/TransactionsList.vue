@@ -4,6 +4,7 @@
             v-if="!transactions.length"
             resource="transaction"
             imgUrl="empty-transaction"
+            message="You do not have any transactions yet"
         >
             <p>Transactions will appear here</p>
         </EmptyState>

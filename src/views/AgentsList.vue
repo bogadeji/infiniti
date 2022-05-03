@@ -3,7 +3,10 @@
         <EmptyState 
             v-if="!agents.length"
             resource="agents"
+            imgUrl="empty-agent"
+            message="You do not have any agents yet"
             btn
+            btnMsg="Create new agent"
         />
         <div v-else>
             <v-data-table

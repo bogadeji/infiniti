@@ -2,8 +2,10 @@
     <v-container>
         <EmptyState 
             v-if="!users.length"
-            resource="users"
+            resource="user"
+            message="You have not added any users"
             btn    
+            btnMsg="Add new user"
         />
         <div v-else>
             <v-data-table
@@ -28,7 +30,8 @@ export default {
                 { text: 'Status', value: 'status' },
                 { text: '', },
             ],
-            users: [
+            users: 0,
+            user: [
                 {
                     name: "John Brown",
                     email: "johnbrown@peakbank.com",

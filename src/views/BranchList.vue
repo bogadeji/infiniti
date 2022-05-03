@@ -3,7 +3,9 @@
         <EmptyState 
             v-if="!branches.length"
             resource="branch"
+            message="You do not have any branches yet"
             btn
+            btnMsg="Create new branch"
         />
         <div v-else>
             <v-data-table
