@@ -29,7 +29,7 @@ export default {
 
     .v-btn {
         text-transform: none !important;
-        border-radius: 35px;
+        border-radius: 5px;
         margin: 2px 0;
     }
     

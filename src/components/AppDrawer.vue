@@ -156,92 +156,119 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 
-.v-navigation-drawer__content::-webkit-scrollbar-track
-  -webkit-box-shadow: inset 0 0 6px #5d5d5d
+.v-navigation-drawer__content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #5d5d5d;
+  box-shadow: inset 0 0 6px #5d5d5d;
   background-color: #5d5d5d
+}
 
-.v-navigation-drawer__content::-webkit-scrollbar
-  width: 0px
+.v-navigation-drawer__content::-webkit-scrollbar{
+  width: 0px;
+}
 
-.v-navigation-drawer__content::-webkit-scrollbar-thumb
-  -webkit-box-shadow: inset 0 0 6px #424242
-  background-color: #424242
+.v-navigation-drawer__content::-webkit-scrollbar-thumb{
+  -webkit-box-shadow: inset 0 0 6px #424242;
+  box-shadow: inset 0 0 6px #424242;
+  background-color: #424242;
+}
 
-#default-drawer
-  padding: 12px 0
-  background: #f2fbfe
-  .v-list--nav.v-list--dense .v-list-item:not(:last-child):not(:only-child)
+#default-drawer {
+  padding: 12px 0;
+  background: #f2fbfe;
+  .v-list--nav.v-list--dense .v-list-item:not(:last-child):not(:only-child) {
     margin-bottom: 0
-  .v-list-item
-    padding: 0
-    margin: 0 12px
+  }
+  .v-list-item {
+    padding: 0;
+    margin: 0 12px;
+  }
 
   .v-list-item::before,
-  .v-list-item::after
-    display: none
+  .v-list-item::after {
+    display: none;
+  }
 
   .v-list-group__header__prepend-icon,
-  .v-list-item__icon
-    margin-left: 0
-    margin-right: 11px
-    font-size: 12px
+  .v-list-item__icon {
+    margin-left: 0;
+    margin-right: 11px;
+    font-size: 12px;
+  }
 
-  .v-list--dense .v-list-item .v-list-item__icon
-    margin-top: 0
-    margin-bottom: 0
-    height: 20px
-    align-self: center
+  .v-list--dense .v-list-item .v-list-item__icon {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 20px;
+    display: flex;
+    align-self: center;
+  }
     
-  .v-icon.v-icon
-    font-size: 20px
+  .v-icon.v-icon {
+    font-size: 20px;
+  }
 
-  .v-list-item.logo
-    gap: 4px
+  .v-list-item.logo {
+    gap: 4px;
+  }
     
-  &.v-navigation-drawer--mini-variant
-    .v-list-item
-      justify-content: flex-start !important
+  &.v-navigation-drawer--mini-variant {
+    .v-list-item {
+      justify-content: flex-start !important;
+    }
   
-    .v-list-item.logo
-        justify-content: center !important
+    .v-list-item.logo {
+        justify-content: center !important;
+    }
 
-    .v-list-item.company
-      background: unset
-      padding: 0
+    .v-list-item.company {
+      background: unset;
+      padding: 0;
+    }
+  }
+  .logo-name {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: -0.05em;
+    color: #1630C9;
+  }
 
-  .logo-name
-    font-weight: 500
-    font-size: 32px
-    line-height: 37px
-    letter-spacing: -0.05em
-    color: #1630C9
+  .v-list-item.company {
+    background: #EDF1F8;
+    padding: 0 8px;
+    border-radius: 10px;
+  
+    .company-name {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      color: #121826;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  }
+  .first-letter {
+    background: #FD1733;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18px;
+  }
 
-  .v-list-item.company
-    background: #EDF1F8
-    padding: 0 8px
-    border-radius: 10px
-    .company-name
-      display: flex
-      flex-direction: row
-      gap: 8px
-      align-items: center
-      color: #121826
-      font-size: 12px
-      line-height: 14px
-      font-weight: 400
-      margin-bottom: 0
-    
-  .first-letter
-    background: #FD1733
-    width: 36px
-    height: 36px
-    border-radius: 50%
-    display: flex
-    align-items: center
-    justify-content: center
-    color: #fff
-    font-size: 16px
-    line-height: 18px
+  
+
+    .v-list .v-list-item--active {
+        color: #1630C9;
+    }
+}
 </style>
