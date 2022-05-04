@@ -55,12 +55,9 @@ export default {
 
 <style lang="scss">
     #empty-state {
-        position: fixed;
-        transform: translate(0%, 20%);
         
         div.flow {
-            height: 500px;
-            flex-direction: column;
+            margin: 100px auto;
         }
         .empty-state--img {
             width: 150px;
