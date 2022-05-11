@@ -12,11 +12,14 @@ import TransactionsList from '@/views/TransactionsList.vue'
 import BranchList from '@/views/BranchList.vue'
 import BranchCreate from '@/views/BranchCreate.vue'
 import MerchantsList from '@/views/MerchantsList.vue'
+import MerchantsCreate from '@/views/MerchantsCreate.vue'
 import AgentsList from '@/views/AgentsList'
+import AgentsCreate from '@/views/AgentsCreate'
 import CommissionsList from '@/views/CommissionsList.vue'
 import TerminalsList from '@/views/TerminalsList.vue'
 import TerminalsCreate from '@/views/TerminalsCreate.vue'
-import ProductList from '@/views/ProductList.vue'
+import ProductsList from '@/views/ProductsList.vue'
+import ProductsCreate from '@/views/ProductsCreate.vue'
 import ApiList from '@/views/ApiList'
 import SystemSettings from '@/views/SystemSettings'
 
@@ -153,6 +156,78 @@ export default new Router({
         },
         {
             path: '/merchants',
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'MerchantsList',
+                    component: MerchantsList,
+                    meta: {
+                        name: 'Merchants'
+                    }
+                },
+                {
+                    path: 'new',
+                    name: 'MerchantsCreate',
+                    component: MerchantsCreate,
+                    meta: {
+                        name: 'Merchants'
+                    }
+                },
+                // {
+                //     path: ':id',
+                //     name: 'BranchDetails',
+                //     component: BranchDetails,
+                //     // meta: {
+                //     //     name: 'User Details'
+                //     // }
+                // }
+            ],
+        },
+        {
+            path: '/agents',
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'AgentsList',
+                    component: AgentsList,
+                    meta: {
+                        name: 'Agents'
+                    }
+                },
+                {
+                    path: 'new',
+                    name: 'AgentsCreate',
+                    component: AgentsCreate,
+                    meta: {
+                        name: 'Agents'
+                    }
+                },
+                // {
+                //     path: ':id',
+                //     name: 'BranchDetails',
+                //     component: BranchDetails,
+                //     // meta: {
+                //     //     name: 'User Details'
+                //     // }
+                // }
+            ],
+        },
+        {
+            path: '/merchants',
             name: 'Merchants',
             component: MerchantsList,
             meta: {
@@ -221,12 +296,48 @@ export default new Router({
         },
         {
             path: '/products',
-            name: 'ProductList',
-            component: ProductList,
-            meta: {
-                name: 'Products'
-            }
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'ProductsList',
+                    component: ProductsList,
+                    meta: {
+                        name: 'Products'
+                    }
+                },
+                {
+                    path: 'new',
+                    name: 'ProductsCreate',
+                    component: ProductsCreate,
+                    meta: {
+                        name: 'Products'
+                    }
+                },
+                // {
+                //     path: ':id',
+                //     name: 'TerminalDetails',
+                //     component: TerminalDetails,
+                //     // meta: {
+                //     //     name: 'Terminal Details'
+                //     // }
+                // }
+            ],
         },
+        // {
+        //     path: '/products',
+        //     name: 'ProductList',
+        //     component: ProductList,
+        //     meta: {
+        //         name: 'Products'
+        //     }
+        // },
         {
             path: '/api',
             name: 'ApiList',

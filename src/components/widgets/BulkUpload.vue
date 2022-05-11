@@ -1,7 +1,7 @@
 <template>
     <div class="bulk-upload flow">
-        <p class="bulk-upload-text">Or bulk upload users from <span>csv</span> or <span>xls</span> file</p>
-        <AppBtn>Browse files to upload</AppBtn>
+        <slot />
+        <AppBtn v-if="btn">{{ btnText }}</AppBtn>
     </div>
 </template>
 <script>
@@ -13,6 +13,24 @@ export default {
 
         }
     },
+    props: {
+        title: {
+            typeof: String,
+            default: ""
+        },
+        info: {
+            typeof: String,
+            default: ""
+        },
+        btn: {
+            typeof: Boolean,
+            default: false
+        },
+        btnText: {
+            typeof: String,
+            default: "Browse files to upload"
+        }
+    },
     components: {
         AppBtn
     }
@@ -22,6 +40,7 @@ export default {
     .bulk-upload {
         width: 100%;
         max-width: 100%;
+        --flow-space: 0.625rem;
         text-align: center;
         background: #f7f7f9;
         border: 1px dashed #1630C9;
@@ -32,6 +51,9 @@ export default {
         line-height: 15px;
         color: #56586D;
         padding: 26px 0;
+    }
+    p.bulk-upload-text {
+        margin-bottom: 8px;
     }
     .bulk-upload-text span {
         font-style: normal;

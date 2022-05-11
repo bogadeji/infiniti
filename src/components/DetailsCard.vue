@@ -53,6 +53,14 @@ export default {
         border-top: 1px solid rgba(86, 101, 109, 0.15);
         padding: 20px 0;
     }
+    .product-logo {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+    }
+    .product-logo img {
+        font-size: 10px;
+    }
     .details__heading {
         margin-bottom: 10px;
         font-weight: 700;

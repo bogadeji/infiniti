@@ -2,6 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!products.length"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table

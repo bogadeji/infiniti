@@ -4,7 +4,7 @@
         <template v-slot="{formData}">
             <StepFormTab title="User details" info="Your name and Email" :formData="formData" :selected="true">
                 <v-container class="mt-16 tab-container">
-                    <v-row id="form-step-3" gutter="32">
+                    <v-row id="form-step-1" gutter="32">
                         <v-col md="6" cols="12" class="pt-0">
                             <AppInput
                                 label="First name"
@@ -32,7 +32,9 @@
                             />
                         </v-col>
                         <v-col cols="12" class="pt-0">
-                            <BulkUpload />
+                            <BulkUpload btn="true">
+                                <p class="bulk-upload-text">Or bulk upload users from <span>csv</span> or <span>xls</span> file</p>
+                            </BulkUpload>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -56,7 +58,7 @@
                 </div>
             </StepFormTab>
             <StepFormTab title="Submit" info="Finishing Up">
-                <div id="form-step-1" class="mt-16">
+                <div id="form-step-3" class="mt-16">
                     <DetailsCard title="User details" info="Confirm the details of this user" >
                         
                         <div class="details__content">
