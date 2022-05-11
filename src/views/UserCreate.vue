@@ -2,52 +2,7 @@
     <v-container>
         <StepForm @onComplete="onComplete" id="form-details" >
         <template v-slot="{formData}">
-            <StepFormTab title="Submit" info="Finishing Up"  :selected="true">
-                <div id="form-step-1" class="mt-16">
-                    <DetailsCard title="User details" info="Confirm the details of this user" >
-                        
-                        <div class="details__content">
-                            <h5 class="details__heading">User details</h5>
-                            <v-row>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                            </v-row>
-                        </div>
-                        <div class="details__content">
-                            <h5 class="details__heading">Business details</h5>
-                            <v-row>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">Branch</h6>
-                                    <p class="details__info">Jason</p>
-                                </v-col>
-                                <v-col cols="6">
-                                    <h6 class="details__subheading">Business name</h6>
-                                    <p class="details__info">Derulo</p>
-                                </v-col>
-                            </v-row>
-                        </div>
-                    </DetailsCard>           
-                </div>
-            </StepFormTab>
-            <StepFormTab title="User details" info="Your name and Email" :formData="formData">
+            <StepFormTab title="User details" info="Your name and Email" :formData="formData" :selected="true">
                 <v-container class="mt-16 tab-container">
                     <v-row id="form-step-3" gutter="32">
                         <v-col md="6" cols="12" class="pt-0">
@@ -100,7 +55,51 @@
                     </v-container>
                 </div>
             </StepFormTab>
-            
+            <StepFormTab title="Submit" info="Finishing Up">
+                <div id="form-step-1" class="mt-16">
+                    <DetailsCard title="User details" info="Confirm the details of this user" >
+                        
+                        <div class="details__content">
+                            <h5 class="details__heading">User details</h5>
+                            <v-row>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">First name</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">First name</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">First name</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">First name</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">First name</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                            </v-row>
+                        </div>
+                        <div class="details__content">
+                            <h5 class="details__heading">Business details</h5>
+                            <v-row>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">Branch</h6>
+                                    <p class="details__info">Jason</p>
+                                </v-col>
+                                <v-col cols="6">
+                                    <h6 class="details__subheading">Business name</h6>
+                                    <p class="details__info">Derulo</p>
+                                </v-col>
+                            </v-row>
+                        </div>
+                    </DetailsCard>           
+                </div>
+            </StepFormTab>
             </template>
         </StepForm>
     </v-container>

@@ -33,8 +33,8 @@ export default {
                 { text: 'Status', value: 'status' },
                 { text: '', },
             ],
-            users: 0,
-            user: [
+            user: 0,
+            users: [
                 {
                     name: "John Brown",
                     email: "johnbrown@peakbank.com",
