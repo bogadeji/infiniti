@@ -8,7 +8,7 @@
                 <p class="empty-text" v-if="message">{{ message }}</p>
                 <slot />
             </div>
-            <AppBtn class="empty-btn" v-if="btn">{{ btnMsg }}</AppBtn>
+            <AppBtn class="empty-btn" v-if="btn" :to="to">{{ btnMsg }}</AppBtn>
         </div>
     </v-container>
 </template>
@@ -20,32 +20,20 @@ export default {
     name: "EmptyState",
     data () {
         return {
-
+            imgUrl: this.emptyStateData.imgUrl || 'empty-icon',
+            message: this.emptyStateData.message || null,
+            btn: this.emptyStateData.btn,
+            btnMsg: this.emptyStateData.btnMsg || null,
+            to: this.emptyStateData.btnLink || ''
         }
     },
     components: {
         AppBtn
     },
     props: {
-        imgUrl: {
-            type: String,
-            default: "empty-icon"
-        },
-        message: {
-            type: String,
-            default: null
-        },
-        resource: {
-            type: String,
-            default: null
-        },
-        btn: {
-            type: Boolean,
-            default: false
-        },
-        btnMsg: {
-            type: String,
-            default: null
+        emptyStateData: {
+            type: Object,
+            default: () => {}
         },
 
     }

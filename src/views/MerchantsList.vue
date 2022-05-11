@@ -2,11 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!merchants.length"
-            resource="merchants"
-            imgUrl="empty-merchant"
-            message="You do not have any merchants yet"
-            btn
-            btnMsg="Create new merchant"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table
@@ -24,6 +20,13 @@ export default {
     name: "MerchantList",
     data() {
         return {
+            emptyStateData: {
+                imgUrl: 'empty-merchant',
+                message: 'You have not added any users',
+                btn: true,
+                btnMsg: 'Create new merchant',
+                btnLink: '/merchants/new'
+            },
             headers: [
                 { text: 'merchant name', value: 'merchant_name' },
                 { text: 'number of terminals', value: 'no_of_terminals' },

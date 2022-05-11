@@ -1,5 +1,5 @@
 // src/sass/main.scss
-@import '~vuetify/src/styles/styles.sass';
+// @import '~vuetify/src/styles/styles.sass';
 
 $body-font-family: "Ubuntu", sans-serif;
 
@@ -60,7 +60,8 @@ v-application {
     display: none;
 }
 
-.v-text-field--is-booted > .v-input__control > .v-input__slot {
+.v-text-field--is-booted > .v-input__control > .v-input__slot,
+.v-text-field--is-booted > .v-input__control > .v-select__slot {
   min-height: 40px;
   max-height: 40px;
   height: 40px;

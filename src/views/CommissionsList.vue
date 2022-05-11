@@ -2,8 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!commissions.length"
-            resource="commissions"
-            message="You have not earned any commissions yet"
+            :emptyStateData="emptyStateData"
         >
             <p>Commissions will appear here</p>
         </EmptyState>
@@ -23,6 +22,9 @@ export default {
     name: "CommissionsList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You have not earned any commissions yet',
+            },
             headers: [
                 { text: 'product', value: 'product' },
                 { text: 'commission', value: 'commission' },

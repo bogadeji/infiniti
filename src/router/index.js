@@ -6,6 +6,8 @@ import AuthRegister from '@/views/AuthRegister';
 import AuthOTP from '@/views/AuthOTP';
 import Dashboard from '@/views/Dashboard';
 import UserList from '@/views/UserList.vue'
+import UserCreate from '@/views/UserCreate.vue'
+import UserDetails from '@/views/UserDetails.vue'
 import TransactionsList from '@/views/TransactionsList.vue'
 import BranchList from '@/views/BranchList.vue'
 import MerchantsList from '@/views/MerchantsList.vue'
@@ -61,7 +63,6 @@ export default new Router({
             name: 'Dashboard',
             component: Dashboard,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Current Transacting Users'
             }
         },
@@ -70,16 +71,45 @@ export default new Router({
             name: 'TransactionsList',
             component: TransactionsList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Transactions'
             }
         },
         {
             path: '/users',
-            name: 'UserList',
-            component: UserList,
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'UserList',
+                    component: UserList,
+                    // meta: {
+                    //     name: 'Users'
+                    // }
+                },
+                {
+                    path: 'new',
+                    name: 'UserCreate',
+                    component: UserCreate,
+                    // meta: {
+                    //     name: 'Users'
+                    // }
+                },
+                {
+                    path: ':id',
+                    name: 'UserDetails',
+                    component: UserDetails,
+                    // meta: {
+                    //     name: 'User Details'
+                    // }
+                }
+            ],
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Users'
             }
         },
@@ -88,7 +118,6 @@ export default new Router({
             name: 'BranchList',
             component: BranchList,
             meta: {
-                layout: 'LoggedInLayout', 
                 name: 'Branches'
             }
         },
@@ -97,7 +126,6 @@ export default new Router({
             name: 'Merchants',
             component: MerchantsList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Merchants'
             }
         },
@@ -106,7 +134,6 @@ export default new Router({
             name: 'AgentsList',
             component: AgentsList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Agents'
             }
         },
@@ -115,7 +142,6 @@ export default new Router({
             name: 'CommissionList',
             component: CommissionsList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Commissions'
             }
         },
@@ -124,7 +150,6 @@ export default new Router({
             name: 'TerminalsList',
             component: TerminalsList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Terminals'
             }
         },
@@ -133,7 +158,6 @@ export default new Router({
             name: 'ProductList',
             component: ProductList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Products'
             }
         },
@@ -142,7 +166,6 @@ export default new Router({
             name: 'ApiList',
             component: ApiList,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'API'
             }
         },
@@ -151,7 +174,6 @@ export default new Router({
             name: 'SystemSettings',
             component: SystemSettings,
             meta: {
-                layout: 'LoggedInLayout',
                 name: 'Settings'
             }
         },

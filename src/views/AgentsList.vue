@@ -2,11 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!agents.length"
-            resource="agents"
-            imgUrl="empty-agent"
-            message="You do not have any agents yet"
-            btn
-            btnMsg="Create new agent"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table
@@ -24,6 +20,13 @@ export default {
     name: "AgentList",
     data() {
         return {
+            emptyStateData: {
+                imgUrl: 'empty-agent',
+                message: 'You do not have any agents yet',
+                btn: true,
+                btnMsg: 'Create new agent',
+                btnLink: '/agents/new'
+            },
             headers: [
                 { text: 'merchant name', value: 'merchant_name' },
                 { text: 'number of terminals', value: 'no_of_terminals' },

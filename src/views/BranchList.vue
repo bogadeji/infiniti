@@ -2,10 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!branches.length"
-            resource="branch"
-            message="You do not have any branches yet"
-            btn
-            btnMsg="Create new branch"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table
@@ -23,6 +20,12 @@ export default {
     name: "BranchList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You do not have any branches yet',
+                btn: true,
+                btnMsg: 'Create new branch',
+                btnLink: '/branches/new'
+            },
             headers: [
                 { text: 'branch name', value: 'branch_name' },
                 { text: 'number of agents', value: 'no_of_agents' },

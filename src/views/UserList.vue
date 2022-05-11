@@ -2,10 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!users.length"
-            resource="user"
-            message="You have not added any users"
-            btn    
-            btnMsg="Add new user"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table
@@ -23,6 +20,12 @@ export default {
     name: "UserList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You have not added any users',
+                btn: true,
+                btnMsg: 'Add new user',
+                btnLink: '/users/new'
+            },
             headers: [
                 { text: 'Name', value: 'name' },
                 { text: 'Email', value: 'email' },

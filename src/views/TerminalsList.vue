@@ -2,11 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!terminals.length"
-            resource="terminals"
-            imgUrl="empty-terminal"
-            message="You do not have any terminals yet"
-            btn
-            btnMsg="Create new terminal"
+            :emptyStateData="emptyStateData"
         />
         <div v-else>
             <v-data-table
@@ -24,6 +20,12 @@ export default {
     name: "CommissionsList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You do not have any terminals yet',
+                btn: true,
+                btnMsg: 'Create new terminal',
+                btnLink: '/terminals/new'
+            },
             headers: [
                 { text: 'terminal id', value: 'terminal_id' },
                 { text: 'terminal type', value: 'terminal_type' },

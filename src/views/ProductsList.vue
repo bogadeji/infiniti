@@ -2,10 +2,6 @@
     <v-container>
         <EmptyState 
             v-if="!products.length"
-            resource="products"
-            message="You do not have any products yet"
-            btn
-            btnMsg="Add a new product"
         />
         <div v-else>
             <v-data-table
@@ -23,6 +19,12 @@ export default {
     name: "CommissionsList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You do not have any products yet',
+                btn: true,
+                btnMsg: 'Add a new product',
+                btnLink: '/products/new'
+            },
             headers: [
                 { text: 'terminal id', value: 'terminal_id' },
                 { text: 'terminal type', value: 'terminal_type' },

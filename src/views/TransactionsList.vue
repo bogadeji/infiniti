@@ -2,9 +2,7 @@
     <v-container>
         <EmptyState 
             v-if="!transactions.length"
-            resource="transaction"
-            imgUrl="empty-transaction"
-            message="You do not have any transactions yet"
+            :emptyStateData="emptyStateData"
         >
             <p>Transactions will appear here</p>
         </EmptyState>
@@ -40,6 +38,9 @@ export default {
     name: "TransactionsList",
     data() {
         return {
+            emptyStateData: {
+                message: 'You have no transactions yet'
+            },
             headers: [
                 { text: 'product', value: 'product' },
                 { text: 'sequence', value: 'sequence' },
