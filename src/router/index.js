@@ -15,6 +15,7 @@ import MerchantsList from '@/views/MerchantsList.vue'
 import AgentsList from '@/views/AgentsList'
 import CommissionsList from '@/views/CommissionsList.vue'
 import TerminalsList from '@/views/TerminalsList.vue'
+import TerminalsCreate from '@/views/TerminalsCreate.vue'
 import ProductList from '@/views/ProductList.vue'
 import ApiList from '@/views/ApiList'
 import SystemSettings from '@/views/SystemSettings'
@@ -150,14 +151,6 @@ export default new Router({
                 // }
             ],
         },
-        // {
-        //     path: '/branch',
-        //     name: 'BranchList',
-        //     component: BranchList,
-        //     meta: {
-        //         name: 'Branches'
-        //     }
-        // },
         {
             path: '/merchants',
             name: 'Merchants',
@@ -189,6 +182,42 @@ export default new Router({
             meta: {
                 name: 'Terminals'
             }
+        },
+        {
+            path: '/terminals',
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'TerminalsList',
+                    component: TerminalsList,
+                    meta: {
+                        name: 'Terminals'
+                    }
+                },
+                {
+                    path: 'new',
+                    name: 'TerminalsCreate',
+                    component: TerminalsCreate,
+                    meta: {
+                        name: 'Terminals'
+                    }
+                },
+                // {
+                //     path: ':id',
+                //     name: 'TerminalDetails',
+                //     component: TerminalDetails,
+                //     // meta: {
+                //     //     name: 'Terminal Details'
+                //     // }
+                // }
+            ],
         },
         {
             path: '/products',

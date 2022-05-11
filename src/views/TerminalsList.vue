@@ -21,6 +21,7 @@ export default {
     data() {
         return {
             emptyStateData: {
+                imgUrl: 'empty-terminal',
                 message: 'You do not have any terminals yet',
                 btn: true,
                 btnMsg: 'Create new terminal',
