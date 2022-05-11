@@ -10,6 +10,7 @@ import UserCreate from '@/views/UserCreate.vue'
 import UserDetails from '@/views/UserDetails.vue'
 import TransactionsList from '@/views/TransactionsList.vue'
 import BranchList from '@/views/BranchList.vue'
+import BranchCreate from '@/views/BranchCreate.vue'
 import MerchantsList from '@/views/MerchantsList.vue'
 import AgentsList from '@/views/AgentsList'
 import CommissionsList from '@/views/CommissionsList.vue'
@@ -114,13 +115,49 @@ export default new Router({
             }
         },
         {
-            path: '/branch',
-            name: 'BranchList',
-            component: BranchList,
-            meta: {
-                name: 'Branches'
-            }
+            path: '/branches',
+            component: {
+                // render router-view into parent
+                render(c) { 
+                    return c('router-view'); 
+                }
+
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'BranchList',
+                    component: BranchList,
+                    meta: {
+                        name: 'Branches'
+                    }
+                },
+                {
+                    path: 'new',
+                    name: 'BranchCreate',
+                    component: BranchCreate,
+                    meta: {
+                        name: 'Add new branch'
+                    }
+                },
+                // {
+                //     path: ':id',
+                //     name: 'BranchDetails',
+                //     component: BranchDetails,
+                //     // meta: {
+                //     //     name: 'User Details'
+                //     // }
+                // }
+            ],
         },
+        // {
+        //     path: '/branch',
+        //     name: 'BranchList',
+        //     component: BranchList,
+        //     meta: {
+        //         name: 'Branches'
+        //     }
+        // },
         {
             path: '/merchants',
             name: 'Merchants',

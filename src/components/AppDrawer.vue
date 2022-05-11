@@ -105,7 +105,7 @@
           {
             title: 'Branch',
             icon: 'mdi-account-group-outline',
-            to: '/branch',
+            to: '/branches',
           },
           {
             title: 'Merchants',
