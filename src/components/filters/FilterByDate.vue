@@ -97,6 +97,7 @@ export default {
             min-width: 100%;
             width: 120px;
             margin-top: 10px;
+            z-index: 10;
 
             &:after{
                 content:'';
