@@ -1,28 +1,32 @@
 <template>
     <v-container>
-        <StepForm @onComplete="onComplete" id="form-details" >
+        <StepForm @onComplete="onComplete(userDetails)" id="form-details" >
         <template v-slot="{formData}">
             <StepFormTab title="User details" info="Your name and Email" :formData="formData" :selected="true">
                 <v-container class="mt-16 tab-container">
                     <v-row id="form-step-1" gutter="32">
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="First name"
+                                v-model="userDetails.firstName"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Last name"
+                                v-model="userDetails.lastName"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Email address"
+                                v-model="userDetails.emailAddress"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Phone number"
+                                v-model="userDetails.phoneNumber"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
@@ -44,13 +48,15 @@
                     <v-container class="mt-16 tab-container">
                         <v-row id="form-step-1" gutter="32">
                             <v-col md="6" cols="12" class="pt-0">
-                                <AppInput
+                                <BaseInput
                                     label="Branch"
+                                    v-model="userDetails.branch"
                                 />
                             </v-col>
                             <v-col md="6" cols="12" class="pt-0">
-                                <AppInput
+                                <BaseInput
                                     label="Business name"
+                                    v-model="userDetails.businessName"
                                 />
                             </v-col>
                         </v-row>
@@ -66,23 +72,23 @@
                             <v-row>
                                 <v-col cols="6">
                                     <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
+                                    <p class="details__info" v-if="userDetails.firstName">{{ userDetails.firstName }}</p>
                                 </v-col>
                                 <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
+                                    <h6 class="details__subheading">Last name</h6>
+                                    <p class="details__info">{{ userDetails.lastName }}</p>
                                 </v-col>
                                 <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
+                                    <h6 class="details__subheading">Email Address</h6>
+                                    <p class="details__info">{{ userDetails.emailAddress }}</p>
                                 </v-col>
                                 <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
+                                    <h6 class="details__subheading">Phone Number</h6>
+                                    <p class="details__info">{{ userDetails.phoneNumber }}</p>
                                 </v-col>
                                 <v-col cols="6">
-                                    <h6 class="details__subheading">First name</h6>
-                                    <p class="details__info">Jason</p>
+                                    <h6 class="details__subheading">Type of user</h6>
+                                    <p class="details__info">{{ userDetails.typeOfUser }}</p>
                                 </v-col>
                             </v-row>
                         </div>
@@ -91,11 +97,11 @@
                             <v-row>
                                 <v-col cols="6">
                                     <h6 class="details__subheading">Branch</h6>
-                                    <p class="details__info">Jason</p>
+                                    <p class="details__info">{{ userDetails.branch }}</p>
                                 </v-col>
                                 <v-col cols="6">
                                     <h6 class="details__subheading">Business name</h6>
-                                    <p class="details__info">Derulo</p>
+                                    <p class="details__info">{{ userDetails.businessName }}</p>
                                 </v-col>
                             </v-row>
                         </div>
@@ -109,7 +115,7 @@
 <script>
 import StepForm from '@/components/StepForm'
 import StepFormTab from '@/components/StepFormTab'
-import AppInput from '@/components/app/AppInput'
+import BaseInput from '@/components/base/BaseInput'
 import AppAutoComplete from '@/components/app/AppAutoComplete'
 import BulkUpload from '@/components/widgets/BulkUpload'
 import DetailsCard from '@/components/DetailsCard'
@@ -118,20 +124,38 @@ export default {
     data() {
         return {
             e1: 1,
-            formData: {}
+            formData: {},
+            userDetails: {
+                firstName: '',
+                lastName: '',
+                emailAddress: '',
+                phoneNumber: '',
+                typeOfUser: '',
+                branch: '',
+                businessName: '',
+            },
+            userType: [
+                'Agent',
+                'Merchant',
+                'Other user'
+            ]
         }
     },
     components: {
     StepForm,
     StepFormTab,
-    AppInput,
+    BaseInput,
     AppAutoComplete,
     BulkUpload,
     DetailsCard,
   },
   methods: {
-    onComplete() {
-      alert("Submitting Form ! Rock On");
+    onComplete(details) {
+    //   alert("Submitting Form ! Rock On");
+        this.submitDetails(details)
+    },
+    submitDetails(details) {
+        console.log(details)
     }
   }
 }

@@ -179,7 +179,7 @@ export default {
                 {text: "status", value: "status"},
                 {text: "date", value: "date"},
                 {text: "issuer", value: "issuer"},
-                {text: "", value: ""}
+                {text: "", value: "actions", sortable: false}
             ],
             items: [
                 {

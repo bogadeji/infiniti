@@ -20,13 +20,13 @@
 
     <AppSearch class="hidden-sm-and-down" />
 
-    <AppBtn v-if="resourcePage">Add {{ resource }}</AppBtn>
+    <BaseBtn v-if="resourcePage">Add {{ resource }}</BaseBtn>
   
   </v-app-bar>
 </template>
 
 <script>
-  import AppBtn from '@/components/app/AppBtn'
+  import BaseBtn from '@/components/base/BaseBtn'
   import AppSearch from '@/components/app/AppSearch'
 
 
@@ -38,7 +38,7 @@
         }
     },
     components: {
-        AppBtn,
+        BaseBtn,
         AppSearch
     },
 

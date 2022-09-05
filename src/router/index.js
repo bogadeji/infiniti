@@ -1,27 +1,30 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import NotFound from '@/views/NotFound';
-import AuthLogin from '@/views/AuthLogin';
-import AuthRegister from '@/views/AuthRegister';
-import AuthOTP from '@/views/AuthOTP';
+import AuthLogin from '@/views/Auth/AuthLogin';
+import AuthRegister from '@/views/Auth/AuthRegister';
+import AuthOTP from '@/views/Auth/AuthOTP';
+import ResetPassword from '@/views/Auth/ResetPassword';
+import CreatePassword from '@/views/Auth/CreatePassword';
+import EmailSent from '@/views/Auth/EmailSent';
 import Dashboard from '@/views/Dashboard';
-import UserList from '@/views/UserList.vue'
-import UserCreate from '@/views/UserCreate.vue'
-import UserDetails from '@/views/UserDetails.vue'
-import TransactionsList from '@/views/TransactionsList.vue'
-import BranchList from '@/views/BranchList.vue'
-import BranchCreate from '@/views/BranchCreate.vue'
-import MerchantsList from '@/views/MerchantsList.vue'
-import MerchantsCreate from '@/views/MerchantsCreate.vue'
-import AgentsList from '@/views/AgentsList'
-import AgentsCreate from '@/views/AgentsCreate'
-import CommissionsList from '@/views/CommissionsList.vue'
-import TerminalsList from '@/views/TerminalsList.vue'
-import TerminalsCreate from '@/views/TerminalsCreate.vue'
-import ProductsList from '@/views/ProductsList.vue'
-import ProductsCreate from '@/views/ProductsCreate.vue'
-import ApiList from '@/views/ApiList'
-import SystemSettings from '@/views/SystemSettings'
+import UserList from '@/views/Users/UserList.vue';
+import UserCreate from '@/views/Users/UserCreate.vue';
+import UserDetails from '@/views/Users/UserDetails.vue';
+import TransactionsList from '@/views/Transactions/TransactionsList.vue';
+import BranchList from '@/views/Branches/BranchList.vue';
+import BranchCreate from '@/views/Branches/BranchCreate.vue';
+import MerchantsList from '@/views/Merchants/MerchantsList.vue';
+import MerchantsCreate from '@/views/Merchants/MerchantsCreate.vue';
+import AgentsList from '@/views/Agents/AgentsList';
+import AgentsCreate from '@/views/Agents/AgentsCreate';
+import CommissionsList from '@/views/Commissions/CommissionsList.vue';
+import TerminalsList from '@/views/Terminals/TerminalsList.vue';
+import TerminalsCreate from '@/views/Terminals/TerminalsCreate.vue';
+import ProductsList from '@/views/Products/ProductsList.vue';
+import ProductsCreate from '@/views/Products/ProductsCreate.vue';
+import ApiList from '@/views/ApiList';
+import SystemSettings from '@/views/SystemSettings';
 
 Vue.use(Router);
 
@@ -39,7 +42,7 @@ export default new Router({
             }
         },
         {
-            path: '/verify-email',
+            path: '/verify-otp',
             name: 'AuthOTP',
             component: AuthOTP,
             meta: {
@@ -51,6 +54,30 @@ export default new Router({
             path: '/',
             name: 'AuthLogin',
             component: AuthLogin,
+            meta: {
+                layout: 'AuthLayout'
+            }
+        },
+        {
+            path: '/reset-password',
+            name: 'ResetPassword',
+            component: ResetPassword,
+            meta: {
+                layout: 'AuthLayout'
+            }
+        },
+        {
+            path: '/create-password',
+            name: 'CreatePassword',
+            component: CreatePassword,
+            meta: {
+                layout: 'AuthLayout'
+            }
+        },
+        {
+            path: '/verify-email',
+            name: 'EmailSent',
+            component: EmailSent,
             meta: {
                 layout: 'AuthLayout'
             }
@@ -234,14 +261,14 @@ export default new Router({
                 name: 'Merchants'
             }
         },
-        {
-            path: '/agents',
-            name: 'AgentsList',
-            component: AgentsList,
-            meta: {
-                name: 'Agents'
-            }
-        },
+        // {
+        //     path: '/agents',
+        //     name: 'AgentsList',
+        //     component: AgentsList,
+        //     meta: {
+        //         name: 'Agents'
+        //     }
+        // },
         {
             path: '/commissions',
             name: 'CommissionList',
@@ -250,14 +277,14 @@ export default new Router({
                 name: 'Commissions'
             }
         },
-        {
-            path: '/terminals',
-            name: 'TerminalsList',
-            component: TerminalsList,
-            meta: {
-                name: 'Terminals'
-            }
-        },
+        // {
+        //     path: '/terminals',
+        //     name: 'TerminalsList',
+        //     component: TerminalsList,
+        //     meta: {
+        //         name: 'Terminals'
+        //     }
+        // },
         {
             path: '/terminals',
             component: {

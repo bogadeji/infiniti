@@ -37,9 +37,9 @@
                     @click="nextTab()"
                     class="btn next-tab"
                     color="primary"
-                    :disabled="currentActive == totalTabs - 1"
+                    :disabled="currentActive == totalTabs"
                 >
-                    Next
+                    {{ currentActive == totalTabs - 1 ? 'Submit' : 'Next' }}
                 </button>
             </div>
         </div>
@@ -76,9 +76,13 @@ export default {
             this.selectTab(this.currentActive, this.tabs)
         },
         nextTab() {
-            this.currentActive++;
-            this.selectTab(this.currentActive, this.tabs)
-        }
+            if (this.currentActive < this.totalTabs - 1) {
+                this.currentActive++;
+                this.selectTab(this.currentActive, this.tabs)
+            } else {
+                this.$emit('onComplete')
+            }
+        },
     }
 }
 </script>

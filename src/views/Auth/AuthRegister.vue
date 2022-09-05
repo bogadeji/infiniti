@@ -4,24 +4,24 @@
             <h1 class="font-weight-bold text-left">Create your account</h1>
             <form class="auth-form">
                 <div class="flex input-flex">
-                    <AppInput
+                    <BaseInput
                         type="text"
                         label="First name"
                     />
-                    <AppInput
+                    <BaseInput
                     type="text"
                         label="Last name"
                     />
                 </div>
-                <AppInput
+                <BaseInput
                 type="text"
                     label="Email address"
                 />
-                <AppInput
+                <BaseInput
                 type="text"
                     label="Phone number"
                 />
-                <AppInput
+                <BaseInput
                     type="password"
                     label="Password"
                     class="password"
@@ -32,7 +32,7 @@
                     label="I accept terms and conditions"
                     value="accept"
                 />
-                    <AppBtn width="100%" x-large light color="primary">Sign up</AppBtn>
+                    <BaseBtn width="100%" x-large light color="primary">Sign up</BaseBtn>
                 
 
                 <p>Have an account? <router-link to="/">Sign in</router-link></p>
@@ -42,13 +42,13 @@
     </div>
 </template>
 <script>
-import AppBtn from '@/components/app/AppBtn';
-import AppInput from '@/components/app/AppInput';
+import BaseBtn from '@/components/base/BaseBtn';
+import BaseInput from '@/components/base/BaseInput';
 export default {
     name: "AuthLogin",
     components: {
-        AppBtn,
-        AppInput
+        BaseBtn,
+        BaseInput
     }
 }
 </script>

@@ -85,7 +85,7 @@
     data() {
       return {
         drawer: true,
-        mini: true,
+        mini: false,
         navItems: [
           {
             title: 'Dashboard',

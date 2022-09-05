@@ -8,17 +8,20 @@
         </v-main>
       <!-- <HelloWorld/> -->
       <!-- </v-main> -->
+      <NotificationsList />
       </AppLayout>
   </v-app>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld';
+import NotificationsList from '@/components/notifications/NotificationsList.vue'
 
 export default {
   name: 'App',
 
   components: {
+    NotificationsList
     // HelloWorld,
   },
 

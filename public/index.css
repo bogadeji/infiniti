@@ -154,7 +154,7 @@ a {
 }
 
 .container {
-    padding: 5vmin 10vmin;
+    padding: 10vmin 10vmin;
     margin: 0 auto;
     /* Or use the code below
     padding-inline: 2rem
@@ -308,4 +308,10 @@ button {
 /* Desktop */
 @media (min-width: 45em) {
 
+}
+
+@media (min-width: 1264px) {
+    .container {
+        max-width: 95% !important;
+    }
 }

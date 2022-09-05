@@ -2,7 +2,7 @@
     <v-container class="mt-16" id="form-details">
         <v-row gutter="32">
             <v-col md="6" cols="12" class="pt-0">
-                <AppInput
+                <BaseInput
                     label="Terminal ID"
                 />
             </v-col>
@@ -12,24 +12,24 @@
                 />
             </v-col>
             <v-col md="6" cols="12" class="pt-0">
-                <AppInput
+                <BaseInput
                     label="Terminal model"
                 />
             </v-col>
             <v-col md="6" cols="12" class="pt-0">
-                <AppInput
+                <BaseInput
                     label="Add merchant to terminal"
                 />
             </v-col>
         </v-row>
         
-        <AppBtn width="150px">Add terminal</AppBtn>
+        <BaseBtn width="150px">Add terminal</BaseBtn>
     </v-container>
 </template>
 <script>
-import AppInput from '@/components/app/AppInput'
+import BaseInput from '@/components/base/BaseInput'
 import AppAutoComplete from '@/components/app/AppAutoComplete'
-import AppBtn from '@/components/app/AppBtn'
+import BaseBtn from '@/components/base/BaseBtn'
 
 export default {
     data() {
@@ -39,9 +39,9 @@ export default {
         }
     },
     components: {
-        AppInput,
+        BaseInput,
         AppAutoComplete,
-        AppBtn,
+        BaseBtn,
     },
     methods: {
         onComplete() {

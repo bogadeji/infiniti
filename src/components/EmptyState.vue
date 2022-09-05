@@ -8,13 +8,13 @@
                 <p class="empty-text" v-if="message">{{ message }}</p>
                 <slot />
             </div>
-            <AppBtn class="empty-btn" v-if="btn" :to="to">{{ btnMsg }}</AppBtn>
+            <BaseBtn class="empty-btn" v-if="btn" :to="to">{{ btnMsg }}</BaseBtn>
         </div>
     </v-container>
 </template>
 
 <script>
-import AppBtn from '../components/app/AppBtn';
+import BaseBtn from '../components/base/BaseBtn';
 
 export default {
     name: "EmptyState",
@@ -28,7 +28,7 @@ export default {
         }
     },
     components: {
-        AppBtn
+        BaseBtn
     },
     props: {
         emptyStateData: {

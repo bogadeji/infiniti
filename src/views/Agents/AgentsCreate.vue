@@ -6,22 +6,22 @@
                 <v-container class="mt-16 tab-container">
                     <v-row id="form-step-3" gutter="32">
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="First name"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Last name"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Email address"
                             />
                         </v-col>
                         <v-col md="6" cols="12" class="pt-0">
-                            <AppInput
+                            <BaseInput
                                 label="Phone number"
                             />
                         </v-col>
@@ -44,12 +44,12 @@
                     <v-container class="mt-16 tab-container">
                         <v-row id="form-step-1" gutter="32">
                             <v-col md="6" cols="12" class="pt-0">
-                                <AppInput
+                                <BaseInput
                                     label="Branch"
                                 />
                             </v-col>
                             <v-col md="6" cols="12" class="pt-0">
-                                <AppInput
+                                <BaseInput
                                     label="Business name"
                                 />
                             </v-col>
@@ -109,7 +109,7 @@
 <script>
 import StepForm from '@/components/StepForm'
 import StepFormTab from '@/components/StepFormTab'
-import AppInput from '@/components/app/AppInput'
+import BaseInput from '@/components/base/BaseInput'
 import AppAutoComplete from '@/components/app/AppAutoComplete'
 import BulkUpload from '@/components/widgets/BulkUpload'
 import DetailsCard from '@/components/DetailsCard'
@@ -124,7 +124,7 @@ export default {
     components: {
     StepForm,
     StepFormTab,
-    AppInput,
+    BaseInput,
     AppAutoComplete,
     BulkUpload,
     DetailsCard,

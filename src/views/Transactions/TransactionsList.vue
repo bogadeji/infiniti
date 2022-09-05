@@ -51,10 +51,10 @@ export default {
                 { text: 'status', value: 'status' },
                 { text: 'date', value: 'date' },
                 { text: 'issuer', value: 'issuer' },
-                { text: 'action', },
+                { text: '', value: 'actions', sortable: false },
             ],
-            transactions: [],
-            transaction: [
+            transaction: [],
+            transactions: [
                 {
                     product: "MTN voucher",
                     sequence: "934848398",

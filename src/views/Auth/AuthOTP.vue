@@ -1,19 +1,19 @@
 <template>
-    <div class="auth-otp">
+    <div class="auth-div">
             <h1 class="font-weight-bold text-left">{{ title }}</h1>
             <p class="my-0 text-left">Enter OTP that was sent to your email to login</p>
             <form class="auth-form">
-                <AppInput
+                <BaseInput
                     type="number"
                     label="OTP"
                 />
-                <AppBtn width="100%" x-large light >Login</AppBtn>
+                <BaseBtn width="100%" x-large light >Login</BaseBtn>
             </form>
     </div>
 </template>
 <script>
-import AppBtn from '@/components/app/AppBtn';
-import AppInput from '@/components/app/AppInput';
+import BaseBtn from '@/components/base/BaseBtn';
+import BaseInput from '@/components/base/BaseInput';
 export default {
     name: "AuthOTP",
     props: {
@@ -23,13 +23,13 @@ export default {
         }
     },
     components: {
-        AppBtn,
-        AppInput
+        BaseBtn,
+        BaseInput
     }
 }
 </script>
 <style>
-    .auth-otp p {
+    .auth-div p {
         font-size: 14px;
     }
 </style>
